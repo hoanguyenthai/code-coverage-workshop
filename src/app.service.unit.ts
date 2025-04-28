@@ -29,9 +29,7 @@ describe('AppService', () => {
   describe('getHello', () => {
     // Step 4: Test a simple method that returns a string
     it('should return "Hello World!"', () => {
-      // Call the method
       const result = service.getHello();
-      
       // Assert the expected result
       expect(result).toBe('Hello World!');
     });
@@ -46,10 +44,7 @@ describe('AppService', () => {
         version: '1.0.0',
         description: 'A simple NestJS application to demonstrate code coverage',
       };
-      
-      // Call the method
       const result = service.getInfo();
-      
       // Assert the result matches expected object
       expect(result).toEqual(expectedInfo);
     });
@@ -58,6 +53,7 @@ describe('AppService', () => {
   // Step 6: Test methods with parameters
   describe('calculateSum', () => {
     it('should correctly add two positive numbers', () => {
+      expect(service.calculateSum(5, 3)).toBe(8);
       expect(service.calculateSum(5, 3)).toBe(8);
     });
 
